@@ -26,7 +26,7 @@ const pages = resolvePageToggles({
 	// 书签导航页面开关
 	booknav: false,
 	// 哔哩哔哩追番页面开关
-	bilibili: false,
+	bilibili: true,
 	// 番组计划页面开关
 	bangumi: false,
 	// VNDB页面开关
@@ -148,16 +148,7 @@ export const siteConfig: SiteConfig = {
 	// 归档页是否折叠非最新年份文章，禁用后默认展开全部年份
 	foldArticle: true,
 
-	// ── 文章列表布局配置 ──────────────────────────────────
-	postListLayout: {
-		// 默认布局模式："list" 列表模式（单列布局），"grid" 网格模式（多列布局）
-		defaultMode: "list",
-		// 移动端默认布局模式，不设置则跟随 defaultMode
-		mobileDefaultMode: "grid",
-		// 列表模式下封面图显示在哪一侧："right" 右侧，"left" 左侧
-		// 网格模式的封面固定在卡片顶部，不受此项影响
-		coverPosition: "right",
-		// 文章简介显示行数，设为 0 则不截断
+	// ── 文章列表布局配置 ───────────────────────────────…127 tokens truncated…则不截断
 		descriptionLines: 2,
 		// 文章卡片底部统计和发布日期是否显示图标
 		showStatsIcons: true,
@@ -253,7 +244,7 @@ export const siteConfig: SiteConfig = {
 	// ── Bilibili配置 ──────────────────────────────────
 	bilibili: {
 		// 你的 Bilibili 用户 UID
-		uid: "38932988",
+		uid: "3537122619296226",
 	},
 
 	// ── 番组计划bangumi配置 ──────────────────────────────────
