@@ -4,5 +4,11 @@ export const profileConfig: ProfileConfig = {
 	avatar: "/images/avatar.png",
 	name: "半醒的鱼",
 	bio: "",
-	links: [],
+	links: [
+		{
+			name: "B站主页",
+			url: "https://space.bilibili.com/3537122619296226",
+			icon: "fa7-brands:bilibili",
+		},
+	],
 };
