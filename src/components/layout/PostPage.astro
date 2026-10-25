@@ -39,6 +39,14 @@ const coverPositionClass =
   style={`--post-card-min-width: ${columnWidth}px;`}
 >
   {
+    page.data.length === 0 && (
+      <section class="card-base px-8 py-12 text-center">
+        <h2 class="text-xl font-bold text-75">暂无文章</h2>
+        <p class="mt-3 text-50">文章将在稍后发布。</p>
+      </section>
+    )
+  }
+  {
     page.data.map((entry: PostEntry, index: number) => (
       <PostCard
         entry={entry}

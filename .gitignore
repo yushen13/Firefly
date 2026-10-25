@@ -47,3 +47,9 @@ package/
 .codex*
 .claude
 .mimocode
+
+# Local validation output and Cloudflare runtime state
+.artifacts/
+.wrangler/
+.dev.vars
+.env.*.local
