@@ -5,6 +5,8 @@
 
 Pages 项目：`banxingdeyu-blog`，站点地址：<https://banxingdeyu-blog.pages.dev>。
 
+首次正式部署已成功；`master` 推送自动部署与分支预览已启用。当前产物已通过线上桌面、手机和主要地址检查，记录见 `docs/handoff.md`。
+
 这是静态 Astro 博客，部署目标为 Cloudflare **Pages + Git 集成**。不要创建 Direct Upload 项目，否则不能直接切换为 Git 自动部署。
 
 ## 首次部署配置
