@@ -27,15 +27,15 @@
 
 ## 验证与部署状态
 
-新增首页空列表提示后，本地 Astro 检查为 0 errors / 0 warnings / 0 hints（259 文件），TypeScript 检查通过，完整构建通过，Pagefind 生成成功。
-正式 URL 写入后已再次完整构建；本地及线上 Chrome 均通过 1440px / 390px 检查：作者名与空文章提示正常，没有横向溢出、页面脚本错误或上游示例文章。
+新增首页空列表提示后，本地 Astro 检查为 0 errors / 0 warnings / 0 hints（259 文件），TypeScript 检查通过，完整构建通过，Pagefind 生成成功。本轮头像与横幅修改后，`./scripts/blog.ps1 build` 再次通过；生成结果含用户头像和指定标语，横幅标题元素已移除。
+先前本地及线上 Chrome 均通过 1440px / 390px 检查，没有横向溢出、页面脚本错误或上游示例文章。本轮没有生成首页预览，按用户要求仅更新头像与横幅文案。最新线上首页和头像资源均返回 HTTP 200，首页 HTML 含指定标语且不含横幅主标题元素。
 线上首页、关于页、归档、分类、标签、RSS、站点地图与 Pagefind 资源共 8 个地址均返回 200。产物 canonical、RSS、站点地图使用正式 Pages 地址，不含本地站点 URL。
 日志和截图在忽略目录 `.artifacts`，其中 `live-qa.json` 为线上检查结果，`live-1440.png`、`live-390.png` 为截图。全文搜索资源已验证；由于真实文章尚未添加，目前只索引待补充的关于页。
 
 Cloudflare 官方设备登录、GitHub App 授权均已由用户完成，8000011 问题已解决。
 已创建关联 `yushen13/Firefly` 的 Pages 项目 `banxingdeyu-blog`，站点 <https://banxingdeyu-blog.pages.dev> 已正式上线。
-部署源码提交：`a6cba13a57081ebf3fe59a9e81d15431e6f5bfd5`。
-成功部署 ID：`80289e66-ec08-4222-88ce-99e3affbbfa5`，Cloudflare 返回 production / deploy / success。
+当前源码提交：`69d07ae680d63adc91f6338eedeb02866513be6b`。
+最新生产部署 ID：`a5c34801-13eb-4c45-adbc-a4d6777e81bf`，Cloudflare 返回 production / deploy / success。初次部署提交 `a6cba13a57081ebf3fe59a9e81d15431e6f5bfd5` 的部署 ID 为 `80289e66-ec08-4222-88ce-99e3affbbfa5`。
 生产分支为 `master`，Git 自动部署已启用，其他分支自动预览已启用。最终交接记录通过 `[skip ci]` 文档提交同步，不重复构建已验证的源码。
 
 凭据不在仓库中；`.artifacts` 和 `.wrangler` 为忽略目录。本地检查所用预览进程在交接时关闭，线上访问不受影响。
