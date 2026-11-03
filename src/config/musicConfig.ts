@@ -17,8 +17,8 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	// 播放模式：'list'=列表循环, 'one'=单曲循环, 'random'=随机播放
 	playMode: "list",
 
-	// 是否显启用歌词
-	showLyrics: false,
+	// 是否启用歌词
+	showLyrics: true,
 
 	// Meting API 配置
 	meting: {
@@ -41,11 +41,48 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	},
 
 	// 本地音乐配置（当 mode 为 'local' 时使用）
-	// 1. 支持传入歌词文件的路径
-	// lrc: "/assets/music/lrc/使一颗心免于哀伤-哼唱.lrc",
-	// 2. 或者直接填入歌词字符串内容
-	// lrc: "[00:00.00]歌词内容...",
 	local: {
-		playlist: [],
+		playlist: [
+			{
+				name: "Ham",
+				artist: "ずっと真夜中でいいのに。",
+				url: "/assets/music/personal-site/audio/01-ham-zutto-mayonaka.mp3",
+				cover: "/assets/music/personal-site/covers/01-ham.jpg",
+				lrc: "/assets/music/personal-site/lyrics/01-ham.lrc",
+				lyricsStart: 10,
+			},
+			{
+				name: "深海少女",
+				artist: "初音ミク",
+				url: "/assets/music/personal-site/audio/02-shinkai-shoujo-hatsune-miku.mp3",
+				cover: "/assets/music/personal-site/covers/02-shinkai-shoujo.jpg",
+				lrc: "/assets/music/personal-site/lyrics/02-shinkai-shoujo.lrc",
+				lyricsStart: 6,
+			},
+			{
+				name: "眩しいDNAだけ",
+				artist: "ずっと真夜中でいいのに。",
+				url: "/assets/music/personal-site/audio/03-mabushii-dna-dake.mp3",
+				cover: "/assets/music/personal-site/covers/03-mabushii-dna.jpg",
+				lrc: "/assets/music/personal-site/lyrics/03-mabushii-dna.lrc",
+				lyricsStart: 4,
+			},
+			{
+				name: "あたしの病気を治してくれる？",
+				artist: "nyamura",
+				url: "/assets/music/personal-site/audio/04-atashi-no-byouki-nyamura.mp3",
+				cover: "/assets/music/personal-site/covers/04-atashi-no-byouki.jpg",
+				lrc: "/assets/music/personal-site/lyrics/04-atashi-no-byouki.lrc",
+				lyricsStart: 20,
+			},
+			{
+				name: "you are my curse (Explicit)",
+				artist: "nyamura",
+				url: "/assets/music/personal-site/audio/05-you-are-my-curse-nyamura.mp3",
+				cover: "/assets/music/personal-site/covers/05-you-are-my-curse.jpg",
+				lrc: "/assets/music/personal-site/lyrics/05-you-are-my-curse.lrc",
+				lyricsStart: 24,
+			},
+		],
 	},
 };

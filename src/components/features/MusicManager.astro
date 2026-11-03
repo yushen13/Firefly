@@ -24,6 +24,7 @@ const localPlaylist =
 							? song.lrc
 							: url(song.lrc)
 						: undefined,
+					lyricsStart: song.lyricsStart,
 				};
 			})
 		: [];
@@ -71,8 +72,9 @@ const managerConfigStr = JSON.stringify({
         return min + ':' + (sec < 10 ? '0' : '') + sec;
     }
 
-    function parseLRC(lrc) {
+    function parseLRC(lrc, startAt) {
         if (!lrc) return [];
+        var minimumTime = Number.isFinite(startAt) ? Math.max(0, startAt) : 0;
         var lines = lrc.split('\n');
         var result = [];
         var timeReg = /\[(\d{2}):(\d{2})\.(\d{2,3})\]/g;
@@ -86,7 +88,7 @@ const managerConfigStr = JSON.stringify({
                         var s = parseInt(match[2]);
                         var ms = parseInt(match[3]);
                         var time = m * 60 + s + ms / (match[3].length === 3 ? 1000 : 100);
-                        result.push({ time: time, text: text });
+                        if (time >= minimumTime) result.push({ time: time, text: text });
                     });
                 }
             }
@@ -189,7 +191,7 @@ const managerConfigStr = JSON.stringify({
             fetch(track.lrc)
                 .then(function (r) { return r.text(); })
                 .then(function (text) {
-                    state.lyrics = parseLRC(text);
+                    state.lyrics = parseLRC(text, track.lyricsStart);
                     emit('fm:lyrics', { lyrics: state.lyrics, status: 'loaded' });
                 })
                 .catch(function () {
@@ -197,7 +199,7 @@ const managerConfigStr = JSON.stringify({
                     emit('fm:lyrics', { lyrics: [], status: 'failed' });
                 });
         } else {
-            state.lyrics = parseLRC(track.lrc);
+            state.lyrics = parseLRC(track.lrc, track.lyricsStart);
             emit('fm:lyrics', { lyrics: state.lyrics, status: state.lyrics.length > 0 ? 'loaded' : 'none' });
         }
     }

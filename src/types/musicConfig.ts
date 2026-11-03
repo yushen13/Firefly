@@ -46,7 +46,8 @@ export type MusicPlayerConfig = {
 			artist: string; // 艺术家
 			url: string; // 音乐文件路径（相对于 public 目录）
 			cover?: string; // 封面图片路径（相对于 public 目录）
-			lrc?: string; // 歌词内容，支持 LRC 格式
+			lrc?: string; // 歌词文件路径或 LRC 内容
+			lyricsStart?: number; // 歌词开始显示的音频秒数
 		}>;
 	};
 };
