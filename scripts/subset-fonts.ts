@@ -131,6 +131,14 @@ async function collectChars(): Promise<string> {
 		for (const c of text) charSet.add(c);
 	}
 
+	// Music lyrics are loaded at runtime from LRC files, so they are not present
+	// in generated HTML. Include them to keep the site font complete in the player.
+	const lyricFiles = await glob("public/assets/music/**/*.lrc");
+	for (const file of lyricFiles) {
+		const lyrics = await fs.readFile(file, "utf-8");
+		for (const c of lyrics.replace(/^\[[^\]]*\]/gm, "")) charSet.add(c);
+	}
+
 	return [...charSet].join("");
 }
 
