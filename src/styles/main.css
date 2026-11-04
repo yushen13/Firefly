@@ -15,11 +15,23 @@
 /* 暗色模式选择器配置 */
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('/assets/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 /* Tailwind v4 配置 - 从 tailwind.config.cjs 迁移 */
 @theme {
   --font-sans:
-    'Roboto', 'sans-serif', ui-sans-serif, system-ui, sans-serif,
+    'LXGW WenKai', 'Roboto', ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+body {
+  font-family: 'LXGW WenKai', ui-sans-serif, system-ui, sans-serif;
 }
 
 /* 自定义工具类 - Tailwind v4 使用 @utility 定义 */
